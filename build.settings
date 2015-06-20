@@ -1,0 +1,61 @@
+settings = {
+    orientation = {
+        default = 'portrait',
+        supported = {'portrait', 'portraitUpsideDown'}
+    },
+    android = {
+        installLocation = 'auto',
+        usesPermissions = {
+            'com.android.vending.BILLING',
+            'android.permission.INTERNET'
+        },
+    },
+    iphone = {
+        plist = {
+            CFBundleIconFiles = {
+                'Icon.png',
+                'Icon@2x.png',
+                'Icon-Small-40.png',
+                'Icon-Small-40@2x.png',
+                'Icon-60.png',
+                'Icon-60@2x.png',
+                'Icon-60@3x.png',
+                'Icon-72.png',
+                'Icon-72@2x.png',
+                'Icon-76.png',
+                'Icon-76@2x.png',
+                'Icon-Small-50.png',
+                'Icon-Small-50@2x.png',
+                'Icon-Small.png',
+                'Icon-Small@2x.png'
+            },
+            UIPrerenderedIcon = true,
+            UILaunchStoryboardName = 'launchscreen',
+            UIApplicationExitsOnSuspend = false,
+        },
+        skipPNGCrush = true
+    },
+    excludeFiles = {
+        all = {'icon1024.png', '*.keystore'},
+        iphone = {'Icon-*dpi.png', 'sounds/music/*.ogg'},
+        android = {
+            'Icon.png',
+            'Icon@2x.png',
+            'Icon-Small-40.png',
+            'Icon-Small-40@2x.png',
+            'Icon-60.png',
+            'Icon-60@2x.png',
+            'Icon-60@3x.png',
+            'Icon-72.png',
+            'Icon-72@2x.png',
+            'Icon-76.png',
+            'Icon-76@2x.png',
+            'Icon-Small-50.png',
+            'Icon-Small-50@2x.png',
+            'Icon-Small.png',
+            'Icon-Small@2x.png',
+            'sounds/music/*.m4a'}
+    },
+    plugins = {
+    }
+}
