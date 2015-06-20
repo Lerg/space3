@@ -18,7 +18,7 @@ function _M:newPiece(params)
         start = 1,
         count = 6})
     
-    local ind = math.random(1, 1)
+    local ind = math.random(1, 6)
     piece.ind = ind
     local r, g, b = app.HSVtoRGB((ind - 1) * 50, 1, 1)
     piece:setFillColor(r, g, b)
