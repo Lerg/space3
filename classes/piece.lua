@@ -18,7 +18,7 @@ function _M:newPiece(params)
         start = 1,
         count = 6})
     
-    local ind = math.random(1, 6)
+    local ind = math.random(1, 1)
     piece.ind = ind
     local r, g, b = app.HSVtoRGB((ind - 1) * 50, 1, 1)
     piece:setFillColor(r, g, b)
@@ -41,10 +41,12 @@ function _M:newPiece(params)
             if obj.isPiece then
                 if obj.y < self.y then
                     app.nextFrame(function()
-                        audio.playSFX('tick')
-                        local joint = physics.newJoint('piston', self, obj, self.x, self.y, 0, 1)
-                        joint.isLimitEnabled = true
-                        joint:setLimits(0, 0)
+                        if not self.toRemove and not obj.toRemove then
+                            audio.playSFX('tick')
+                            local joint = physics.newJoint('piston', self, obj, self.x, self.y, 0, 1)
+                            joint.isLimitEnabled = true
+                            joint:setLimits(0, 0)
+                        end
                     end)
                     if obj.ind == self.ind then
                         table.insert(self.sameNeighbors, obj)
